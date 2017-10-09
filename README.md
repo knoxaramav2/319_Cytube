@@ -12,9 +12,16 @@ install node.js from https://nodejs.org/en/download/
 //install nodemon through command prompt
 //this will update the server when a file is changed
 //so you don't have to manually do it every time
-cmd: npm instal -g nodemon
-cmd: nodemon server_file_.js
 
+//can also run installPackages.cmd included after installing
+//node.js
+
+cmd: npm install -g nodemon
+cmd: npm install express --save
+cmd: nodemon server_file_.js
+cmd: npm install body-parser --save
+cmd: npm install cookie-parser --save
+cmd: npm install multer --save
 
 RESOURCES
 
