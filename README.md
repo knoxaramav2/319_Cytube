@@ -5,6 +5,23 @@ Video sharing platform for cs 319
 Uses Angular.js, Node.js
 
 
+*****GIT
+
+//get repo
+git pull https://github.com/knoxaramav2/319_Cytube.git
+
+//push changes
+git add *
+git commit -m "commit message"
+git push
+
+//undo local and get server version
+git add *
+git commit
+git reset --hard
+git pull
+
+
 
 *****SETUP
 install node.js from https://nodejs.org/en/download/

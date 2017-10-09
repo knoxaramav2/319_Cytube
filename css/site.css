@@ -9,23 +9,36 @@
 }
 
 #menu_bar{
-	height: 30px;
+	height: 50px;
 	justify-content: flex-start;
 	display:flex;
 	flex-direction: row;
 	align-items: center;
 	padding: 3px;
 	margin-bottom: 5px;
+	justify-content: center;
 }
 
 #container{
 	height: 100%;
 }
 
+#logo{
+	color: white;
+	font-size: x-large;
+	font-weight: 900;
+	-webkit-font-smoothing: antialiased;
+	font-family: Arial;
+}
+
 .control{
 	
 }
 
+.menu_item{
+	flex: auto;
+	width: -webkit-fill-available;
+}
 
 
 /*Specific controls*/
