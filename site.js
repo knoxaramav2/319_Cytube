@@ -10,6 +10,8 @@ const app = express();
 
 //setup app permissions
 app.use(express.static(path.join(__dirname + '/css')));
+app.use(express.static(path.join(__dirname + '/scripts')));
+app.use(express.static(path.join(__dirname + '/fonts')));
 app.use(express.static('public')); //i.e http://.../images/Tux.png
 
 

@@ -16,7 +16,7 @@ git commit -m "commit message"
 git push
 
 //undo local and get server version
-git add *
+git add .
 git commit
 git reset --hard
 git pull

@@ -8,13 +8,21 @@
 	border: 1px solid #AEAEAE;
 }
 
+body {
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+body, html {
+    height: 100%;
+}
+
 #menu_bar{
 	height: 50px;
-	justify-content: flex-start;
 	display:flex;
 	flex-direction: row;
 	align-items: center;
-	padding: 3px;
+	padding: 0 20px;
 	margin-bottom: 5px;
 	justify-content: center;
 }
@@ -29,6 +37,7 @@
 	font-weight: 900;
 	-webkit-font-smoothing: antialiased;
 	font-family: Arial;
+	margin-left: 20px;
 }
 
 .control{
@@ -43,5 +52,40 @@
 
 /*Specific controls*/
 #search_bar{
-	padding-left: 8px;
+	width: inherit;
+	max-width: 300px;
+}
+
+.slick-slide{
+	width: 300px;
+}
+
+.slick-slide .image{
+	padding: 10px;
+}
+
+.slick-slide img{
+	border: 5px solid #FFF;
+	display: block;
+	width: 100%;
+}
+
+
+/*   Tablet   */
+@media only screen and (max-width: 800px)
+{
+	#menu_bar{
+		height: 100px;
+		flex-direction: column-reverse;
+	}
+	
+	.menu_item{
+		width: 100%;
+		text-align: center;
+	}
+	
+	.control input{
+		height: 30px;
+		font-size: x-large;
+	}
 }

@@ -1,12 +1,19 @@
 <!doctype html>
 <html ng=app>
 <head>
+
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width" />
+
 <title>CyTube</title>
 <!--Style sheets-->
 <link rel="stylesheet" href="/site.css">
+<link rel="stylesheet" href="/slick.css">
+<link rel="stylesheet" href="/slick-theme.css">
 <!-- JS -->
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="/slick.js" type="text/javascript" charset="utf-8"></script>
 
 </head>
 
@@ -27,11 +34,72 @@
 </div>
 
 <div id="container" class="border">
-
+	<div class="highlight_reel">
+		<div class="slick-slide">
+			<div class="image">
+				<img src="images/llama.jpg">
+			</div>
+		</div>
+		<div class="slick-slide">
+			<div class="image">
+				<img src="images/llama.jpg">
+			</div>
+		</div>
+		<div class="slick-slide">
+			<div class="image">
+				<img src="images/llama.jpg">
+			</div>
+		</div>
+		<div class="slick-slide">
+			<div class="image">
+				<img src="images/llama.jpg">
+			</div>
+		</div>
+	</div>
 </div>
 
 <script>
-
+	$(document).ready(function(){
+		
+$('.highlight_reel').slick({
+  dots: true,
+  infinite: true,
+  speed: 300,
+  slidesToShow: 4,
+  slidesToScroll: 4,
+  arrows: true,
+  dots: true,
+  autoplay: true,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        infinite: true,
+        dots: true
+      }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }
+    // You can unslick at a given breakpoint now by adding:
+    // settings: "unslick"
+    // instead of a settings object
+  ]
+});
+	});
 </script>
 
 </body>
