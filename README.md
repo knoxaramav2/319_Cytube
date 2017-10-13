@@ -39,6 +39,7 @@ cmd: nodemon server_file_.js
 cmd: npm install body-parser --save
 cmd: npm install cookie-parser --save
 cmd: npm install multer --save
+cmd: npm install ejs --save
 
 RESOURCES
 

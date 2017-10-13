@@ -3,6 +3,13 @@
 	background-color: #c00;
 }
 
+label{
+	font-family: fantasy;
+	font-size: x-large;
+}
+
+
+/*Core structures*/
 
 .border{
 	border: 1px solid #AEAEAE;
@@ -49,6 +56,11 @@ body, html {
 	width: -webkit-fill-available;
 }
 
+.page_region{
+	margin: 10px;
+	text-align: center;
+	background-color: #c00;
+}
 
 /*Specific controls*/
 #search_bar{
