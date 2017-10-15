@@ -74,6 +74,9 @@ app.get('/video', function(req, res) {
 	  }
 	});
 
+app.get('/upload', function(req, res) {
+	res.render("upload");
+});
 
 var server = app.listen(listen_port, function(){
 	var host = server.address().address;

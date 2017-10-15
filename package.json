@@ -6,13 +6,18 @@
   "engines": {
     "node": ">=6.2.0"
   },
-  
-    "scripts": {
+  "scripts": {
     "start": "nodemon site.js"
-  	},
-    "acorn": {
-      "version": "2.7.0",
-      "resolved": "https://registry.npmjs.org/acorn/-/acorn-2.7.0.tgz",
-      "integrity": "sha1-q259nYhqrKiwhbwzEreaGYQz8Oc="
-    }
- }
+  },
+  "acorn": {
+    "version": "2.7.0",
+    "resolved": "https://registry.npmjs.org/acorn/-/acorn-2.7.0.tgz",
+    "integrity": "sha1-q259nYhqrKiwhbwzEreaGYQz8Oc="
+  },
+  "dependencies": {
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
+    "mustache": "^2.3.0",
+    "ng-file-upload": "^12.2.13"
+  }
+}

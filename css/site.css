@@ -18,6 +18,9 @@ label{
 body {
     overflow-y: scroll;
     overflow-x: hidden;
+	
+	font-family: Arial;
+	-webkit-font-smoothing: antialiased;
 }
 
 body, html {
@@ -42,8 +45,6 @@ body, html {
 	color: white;
 	font-size: x-large;
 	font-weight: 900;
-	-webkit-font-smoothing: antialiased;
-	font-family: Arial;
 	margin-left: 20px;
 }
 
@@ -68,6 +69,14 @@ body, html {
 	max-width: 300px;
 }
 
+#upload_link{
+	text-decoration: none;
+	color: white;
+	float: right;
+	margin-left: 20px;
+	width: 50px;
+}
+
 .slick-slide{
 	width: 300px;
 }
@@ -82,6 +91,17 @@ body, html {
 	width: 100%;
 }
 
+.drop-box {
+    background: #F8F8F8;
+    border: 5px dashed #DDD;
+    height: 500px;
+    text-align: center;
+    padding-top: 25px;
+    margin: 10px;
+}
+.dragover {
+    border: 5px dashed blue;
+}
 
 /*   Tablet   */
 @media only screen and (max-width: 800px)
@@ -99,5 +119,15 @@ body, html {
 	.control input{
 		height: 30px;
 		font-size: x-large;
+	}
+	
+	.drop-box {
+		height: 400px;
+	}
+}
+
+@media only screen and (max-height: 500px){
+	.drop-box {
+		
 	}
 }

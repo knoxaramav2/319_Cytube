@@ -40,6 +40,7 @@ cmd: npm install body-parser --save
 cmd: npm install cookie-parser --save
 cmd: npm install multer --save
 cmd: npm install ejs --save
+cmd: npm install ng-file-upload --save
 
 RESOURCES
 
