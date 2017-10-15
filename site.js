@@ -9,6 +9,9 @@ var ejs = require('ejs');
 var multipart = require('connect-multiparty');
 var bodyParser = require('body-parser');
 
+//local requires
+var utility = require('./util');
+
 //setup route objects
 const express = require('express');
 const app = express();
@@ -83,9 +86,28 @@ app.post('/file/upload', multiPartMiddleware, function(req, res) {
 	console.log(req.body);
 	console.log(req.files);
 	
+	let videoPath = "./public/videos/";
 	let username = req.body['username'];
+	let fileinfo = req.files.file;
+	let filename = fileinfo['originalFilename'];
+	let localFileName = videoPath + utility.createVideoName(filename);
+	let body = "";
 	
-	console.log();
+	console.log(localFileName);
+	
+	req.on('data', function(data) {
+		console.log('DATA');
+		body += data;
+	});
+	
+	req.on('end', function(){
+		console.log("asdasdasd");
+		fs.appendFile(localFileName, body, function(){
+			res.end('SUCCESS');
+		});
+	});
+	
+
 	
 	res.end('Video uploaded successfully');
 });
