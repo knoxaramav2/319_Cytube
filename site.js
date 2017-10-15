@@ -44,6 +44,10 @@ app.get('/', function(req, res){
 	res.render("index");
 }); 
 
+app.get('/watch/:id', function(req, res){
+	res.render("video", {videoId:req.params.id});
+}); 
+
 app.get('/video/:id', function(req, res) {
 	  const path = 'assets/'+req.params.id+'.mp4'
 	  const stat = fs.statSync(path)
@@ -76,6 +80,8 @@ app.get('/video/:id', function(req, res) {
 	    res.writeHead(200, head)
 	    fs.createReadStream(path).pipe(res)
 	  }
+	  
+	  
 	});
 
 app.get('/upload', function(req, res) {

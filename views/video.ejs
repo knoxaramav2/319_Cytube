@@ -1,0 +1,48 @@
+<!doctype html>
+<html ng=app>
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width" />
+
+	<title>CyTube</title>
+	<!--Style sheets-->
+	<link rel="stylesheet" href="/site.css">
+	<link rel="stylesheet" href="/slick.css">
+	<link rel="stylesheet" href="/slick-theme.css">
+	<!-- JS -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="/slick.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>
+
+	<% include ../partials/template%>
+	
+	<br>
+	<br>
+
+	<video id="videoPlayer" controls>
+     <source src= "http://localhost:8080/video/<%= videoId %>" type="video/mp4">
+    </video>
+    <br>
+	<br>
+
+
+<form action="/html/tags/html_form_tag_action.cfm" method="post">
+
+	<div>
+	<textarea name="comments" id="comments" style="font-family:sans-serif;font-size:2em;">
+	Comment Here
+	</textarea>
+	</div>
+	<input type="submit" value="Submit">
+
+</form>
+
+
+
+</body>
+</html>

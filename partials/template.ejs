@@ -5,7 +5,7 @@
 		</input>
 	</div>
 	<div id="logo" class="menu_item">
-		<label>
+		<label onclick="goHome()">
 			CyTube
 		</label>
 	</div>
@@ -13,3 +13,10 @@
 		<a id="upload_link" href="/upload">Upload</a>
 	</div>
 </div>
+
+<script>
+function goHome(){
+	document.location.href = "/";
+}
+
+</script>
