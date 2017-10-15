@@ -39,6 +39,7 @@ body, html {
 
 #container{
 	height: 100%;
+	padding: 15px;
 }
 
 #logo{
@@ -52,9 +53,16 @@ body, html {
 	
 }
 
+.small_button{
+	background-color: #990000;
+	max-width: min-content;
+	padding: 10px;
+	text-align: center;
+	border: 2px #ffafaf inset;
+}
+
 .menu_item{
 	flex: auto;
-	width: -webkit-fill-available;
 }
 
 .page_region{
@@ -73,7 +81,6 @@ body, html {
 	text-decoration: none;
 	color: white;
 	float: right;
-	margin-left: 20px;
 	width: 50px;
 }
 

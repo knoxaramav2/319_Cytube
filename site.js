@@ -6,11 +6,16 @@ var fs = require('fs');
 var events = require('events');
 var path = require('path');
 var ejs = require('ejs');
-//var pug = require('pug');
+var multipart = require('connect-multiparty');
+var bodyParser = require('body-parser');
 
 //setup route objects
 const express = require('express');
 const app = express();
+var multiPartMiddleware = multipart();
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended:true}));
 
 //setup app permissions
 app.use(express.static(path.join(__dirname + '/css')));
@@ -22,10 +27,6 @@ app.use(express.static('public')); //i.e http://.../images/Tux.png
 
 //app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'ejs');
-
-//app.set('view engine', 'pug');
-
-//const header = pug.compileFile('partials/template.pug');
 
 
 
@@ -76,6 +77,17 @@ app.get('/video', function(req, res) {
 
 app.get('/upload', function(req, res) {
 	res.render("upload");
+});
+
+app.post('/file/upload', multiPartMiddleware, function(req, res) {
+	console.log(req.body);
+	console.log(req.files);
+	
+	let username = req.body['username'];
+	
+	console.log();
+	
+	res.end('Video uploaded successfully');
 });
 
 var server = app.listen(listen_port, function(){
