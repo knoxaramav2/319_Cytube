@@ -44,8 +44,8 @@ app.get('/', function(req, res){
 	res.render("index");
 }); 
 
-app.get('/video', function(req, res) {
-	  const path = 'assets/rick.mp4'
+app.get('/video/:id', function(req, res) {
+	  const path = 'assets/'+req.params.id+'.mp4'
 	  const stat = fs.statSync(path)
 	  const fileSize = stat.size
 	  const range = req.headers.range
