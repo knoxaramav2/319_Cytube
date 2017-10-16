@@ -9,6 +9,7 @@ npm install mustache --save
 npm install ejs --save
 npm install ng-file-upload --save
 npm install connect-multiparty --save
+npm install jquery --save
 
 nodemon server_file_.js
 

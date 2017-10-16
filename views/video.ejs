@@ -5,15 +5,91 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width" />
 
-	<title>CyTube</title>
+<title> Watch CyTube</title>
+	
 	<!--Style sheets-->
 	<link rel="stylesheet" href="/site.css">
-	<link rel="stylesheet" href="/slick.css">
-	<link rel="stylesheet" href="/slick-theme.css">
+	<link rel="stylesheet" type="text/css" href="/jquery-comments.css">
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+	
 	<!-- JS -->
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script src="/slick.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.textcomplete/1.8.0/jquery.textcomplete.js"></script>
+	<script type="text/javascript" src="/jquery-comments.js"></script>
+	
+	
+	<style type="text/css">
+			body {
+				padding: 20px;
+				margin: 0px;
+				font-size: 14px;
+				font-family: "Arial", Georgia, Serif;
+			}
+		</style>
+
+		<!-- Init jquery-comments -->
+		<script type="text/javascript">
+			$(function() {
+				var saveComment = function(data) {
+
+					// Convert pings to human readable format
+					$(data.pings).each(function(index, id) {
+						var user = usersArray.filter(function(user){return user.id == id})[0];
+						data.content = data.content.replace('@' + id, '@' + user.fullname);
+					});
+
+					return data;
+				}
+				
+				$('#comments-container').comments({
+					profilePictureURL: 'https://viima-app.s3.amazonaws.com/media/user_profiles/user-icon.png',
+					currentUserId: 1,
+					roundProfilePictures: true,
+					textareaRows: 1,
+					enableAttachments: true,
+					enableHashtags: true,
+					enablePinging: true,
+					getComments: function(success, error) {
+		        		var commentsArray = [{
+			            id: 1,
+			            created: '2015-10-01',
+			            content: 'Noooo, I got Rickrolled!',
+			            fullname: 'Simon Powell',
+			            profile_picture_url: 'https://app.viima.com/static/media/user_profiles/user-icon.png',
+			            upvote_count: 2,
+			            user_has_upvoted: false
+		     	    }];
+		     		success(commentsArray);
+		   			 },
+					postComment: function(data, success, error) {
+						setTimeout(function() {
+							success(saveComment(data));
+						}, 500);
+					},
+					putComment: function(data, success, error) {
+						setTimeout(function() {
+							success(saveComment(data));
+						}, 500);
+					},
+					deleteComment: function(data, success, error) {
+						setTimeout(function() {
+							success();
+						}, 500);
+					},
+					upvoteComment: function(data, success, error) {
+						setTimeout(function() {
+							success(data);
+						}, 500);
+					},
+					uploadAttachments: function(dataArray, success, error) {
+						setTimeout(function() {
+							success(dataArray);
+						}, 500);
+					},
+				});
+			});
+</script>
+
 
 </head>
 
@@ -31,18 +107,9 @@
 	<br>
 
 
-<form action="/html/tags/html_form_tag_action.cfm" method="post">
-
-	<div>
-	<textarea name="comments" id="comments" style="font-family:sans-serif;font-size:2em;">
-	Comment Here
-	</textarea>
-	</div>
-	<input type="submit" value="Submit">
-
-</form>
-
-
+<br>
+<br>
+<div id="comments-container"></div>
 
 </body>
 </html>
