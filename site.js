@@ -49,7 +49,7 @@ app.get('/watch/:id', function(req, res){
 }); 
 
 app.get('/video/:id', function(req, res) {
-	  const path = 'assets/'+req.params.id+'.mp4'
+	  const path = 'public/videos/'+req.params.id+'.mp4'
 	  const stat = fs.statSync(path)
 	  const fileSize = stat.size
 	  const range = req.headers.range
