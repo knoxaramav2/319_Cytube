@@ -11,6 +11,4 @@ npm install ng-file-upload --save
 npm install connect-multiparty --save
 npm install jquery --save
 
-nodemon server_file_.js
-
 echo Done
