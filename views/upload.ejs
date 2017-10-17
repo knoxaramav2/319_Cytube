@@ -12,47 +12,34 @@
 <link rel="stylesheet" href="/slick-theme.css">
 <!-- JS -->
 
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="/slick.js" type="text/javascript" charset="utf-8"></script>
-
 <script src="ng-file-upload-shim.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
 <script src="ng-file-upload.min.js"></script>
 
 </head>
 
-<body>
+<body ng-app="fileUpload">
 
 	<% include ../partials/template%>
 	
-	<!-- 
+	
 	<div id="container" class="border">
-	
-		<div ng-app="fileUpload" ng-controller="up-control">
-			<div ngf-drop ngf-select ng-model="files" class="drop-box" 
-			ngf-drag-over-class="'dragover'" ngf-multiple="true" ngf-allow-dir="true"
-			accept="image/*,application/pdf">
-			</div>
-		</div>
-	</div>-->
-	
-	
-	
-		<div ng-app="fileUpload" ng-controller="mainCtrl">Username
+		<div ng-controller="mainCtrl">Username
 		<input type="text" ng-model="username"><br/><br/>
-		Drop File:
 		<div ngf-drop ngf-select ng-model="files" class="drop-box" 
 			ngf-drag-over-class="'dragover'" ngf-multiple="false" ngf-allow-dir="true"
 			>Drag or click to upload</div>
 		<div ngf-no-file-drop>File Drag/Drop is not supported for this browser</div>
-	
-	
-</div>
+	</div>
 
 	
 </body>
 
 <script>
+
 //inject angular file upload directives and services.
 var app = angular.module('fileUpload', ['ngFileUpload']);
 
@@ -98,6 +85,7 @@ app.controller('mainCtrl', ['$scope', 'Upload', '$timeout', function ($scope, Up
 		  }     
     };
 }]);
+
 </script>
 
 </html>
