@@ -118,13 +118,25 @@ body, html {
 @media only screen and (max-width: 800px)
 {
 	#menu_bar{
-		height: 100px;
+		height: 150px;
 		flex-direction: column-reverse;
 	}
 	
 	.menu_item{
-		width: 100%;
+		width: inherit;
 		text-align: center;
+	}
+	
+	#upload_link{
+		vertical-align: middle;
+		min-width: 300px;
+		text-align: center;
+	}
+	
+	.small_button a{
+		height: 0;
+		margin-top: 5px;
+		width: -webkit-fill-available;
 	}
 	
 	.control input{

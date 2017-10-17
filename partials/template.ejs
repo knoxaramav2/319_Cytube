@@ -19,4 +19,20 @@ function goHome(){
 	document.location.href = "/";
 }
 
+document.getElementById('search_bar').addEventListener('keyup', function(e){
+	e.preventDefault();
+	if (e.keyCode == 13){
+		var input = this.value;
+		
+		if (input === undefined || input === "")
+			return;
+		
+		window.location.href = "/watch/" + input;
+	}
+});
+
+function searchVideo(){
+	
+}
+
 </script>
